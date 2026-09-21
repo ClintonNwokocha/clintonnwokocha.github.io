@@ -86,7 +86,7 @@ button:focus-visible {
 }
 
 
-.hero p {
+.hero-text p {
   font-size: 1.15rem;
   color: var(--ink);
   max-width: 640px;
@@ -164,4 +164,48 @@ footer a:hover,
 footer a:focus-visible {
   color: var(--accent-deep);
   text-decoration-color: var(--accent);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-photo {
+  margin: 0;
+}
+
+.hero-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid var(--ink);
+  filter: grayscale(20%) contrast(1.02);
+  display: block;
+}
+
+.hero-photo figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+}
+
+.disciplines {
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .hero-photo {
+    order: -1;
+    max-width: 280px;
+  }
 }
